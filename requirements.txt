@@ -1,0 +1,5 @@
+selenium
+requests-async
+beautifulsoup4
+lxml
+chromedriver-binary-auto

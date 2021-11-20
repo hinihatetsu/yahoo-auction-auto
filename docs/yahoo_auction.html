@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yahoo_auction package &mdash; Yahoo Auction Auto 0.0.4 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Yahoo Auction Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">yahoo_auction package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-yahoo_auction.chrome">yahoo_auction.chrome module</a></li>
+<li><a class="reference internal" href="#module-yahoo_auction.cookie">yahoo_auction.cookie module</a></li>
+<li><a class="reference internal" href="#module-yahoo_auction.interface">yahoo_auction.interface module</a></li>
+<li><a class="reference internal" href="#module-yahoo_auction.urls">yahoo_auction.urls module</a></li>
+<li><a class="reference internal" href="#module-yahoo_auction">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Yahoo Auction Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>yahoo_auction package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/yahoo_auction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="yahoo-auction-package">
+<h1>yahoo_auction package<a class="headerlink" href="#yahoo-auction-package" title="Permalink to this headline"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="yahoo_auction.info.html">yahoo_auction.info package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="yahoo_auction.info.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo_auction.info.html#module-yahoo_auction.info.closed_with_winner">yahoo_auction.info.closed_with_winner module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo_auction.info.html#module-yahoo_auction.info.closed_without_winner">yahoo_auction.info.closed_without_winner module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo_auction.info.html#module-yahoo_auction.info.selling">yahoo_auction.info.selling module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yahoo_auction.info.html#module-yahoo_auction.info">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-yahoo_auction.chrome">
+<span id="yahoo-auction-chrome-module"></span><h2>yahoo_auction.chrome module<a class="headerlink" href="#module-yahoo_auction.chrome" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yahoo_auction.chrome.chrome">
+<span class="sig-prename descclassname"><span class="pre">yahoo_auction.chrome.</span></span><span class="sig-name descname"><span class="pre">chrome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">selenium.webdriver.chrome.options.Options</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">selenium.webdriver.chrome.webdriver.WebDriver</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.chrome.chrome" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-yahoo_auction.cookie">
+<span id="yahoo-auction-cookie-module"></span><h2>yahoo_auction.cookie module<a class="headerlink" href="#module-yahoo_auction.cookie" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="yahoo_auction.cookie.get_cookies">
+<span class="sig-prename descclassname"><span class="pre">yahoo_auction.cookie.</span></span><span class="sig-name descname"><span class="pre">get_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.cookie.get_cookies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="yahoo_auction.cookie.get_username_and_cookies">
+<span class="sig-prename descclassname"><span class="pre">yahoo_auction.cookie.</span></span><span class="sig-name descname"><span class="pre">get_username_and_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.cookie.get_username_and_cookies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-yahoo_auction.interface">
+<span id="yahoo-auction-interface-module"></span><h2>yahoo_auction.interface module<a class="headerlink" href="#module-yahoo_auction.interface" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yahoo_auction.interface.</span></span><span class="sig-name descname"><span class="pre">YahooAuction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cookies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">typing.Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headless</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.cancel">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.cancel" title="Permalink to this definition"></a></dt>
+<dd><p>Cancel selling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aID</strong> – Auction ID of Yahoo Auction.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.cancel_items">
+<span class="sig-name descname"><span class="pre">cancel_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aIDs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.cancel_items" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.check_login">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.check_login" title="Permalink to this definition"></a></dt>
+<dd><p>Return True if logined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Return True if logined.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_aIDs_closed_with_winner">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_aIDs_closed_with_winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_aIDs_closed_with_winner" title="Permalink to this definition"></a></dt>
+<dd><p>Get aIDs closed with winner on Yahoo Auction page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of aIDs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_aIDs_closed_without_winner">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_aIDs_closed_without_winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_aIDs_closed_without_winner" title="Permalink to this definition"></a></dt>
+<dd><p>Get aIDs closed with no winner on Yahoo Auction page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of aIDs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_aIDs_selling">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_aIDs_selling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_aIDs_selling" title="Permalink to this definition"></a></dt>
+<dd><p>Get aIDs currently selling on Yahoo Auction page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of aIDs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_info_closed_with_winner">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info_closed_with_winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="yahoo_auction.info.html#yahoo_auction.info.closed_with_winner.InfoClosedWithWinner" title="yahoo_auction.info.closed_with_winner.InfoClosedWithWinner"><span class="pre">yahoo_auction.info.closed_with_winner.InfoClosedWithWinner</span></a></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_info_closed_with_winner" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_info_closed_without_winner">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info_closed_without_winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="yahoo_auction.info.html#yahoo_auction.info.closed_without_winner.InfoClosedWithoutWinner" title="yahoo_auction.info.closed_without_winner.InfoClosedWithoutWinner"><span class="pre">yahoo_auction.info.closed_without_winner.InfoClosedWithoutWinner</span></a></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_info_closed_without_winner" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_info_selling">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_info_selling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="yahoo_auction.info.html#yahoo_auction.info.selling.InfoSelling" title="yahoo_auction.info.selling.InfoSelling"><span class="pre">yahoo_auction.info.selling.InfoSelling</span></a></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_info_selling" title="Permalink to this definition"></a></dt>
+<dd><p>Get product information of <cite>aID</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aID</strong> (<em>str</em>) – Auction ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>selling information.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="yahoo_auction.info.html#yahoo_auction.info.selling.InfoSelling" title="yahoo_auction.info.selling.InfoSelling">InfoSelling</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_urls_closed_with_winner">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_urls_closed_with_winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_urls_closed_with_winner" title="Permalink to this definition"></a></dt>
+<dd><p>Get URLs closed with winner on Yahoo Auction page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of URLs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_urls_closed_without_winner">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_urls_closed_without_winner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_urls_closed_without_winner" title="Permalink to this definition"></a></dt>
+<dd><p>Get URLs closed with no winner on Yahoo Auction page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of URLs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.get_urls_selling">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_urls_selling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.get_urls_selling" title="Permalink to this definition"></a></dt>
+<dd><p>Get URLs currently selling on Yahoo Auction page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of URLs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.reflesh_cookies">
+<span class="sig-name descname"><span class="pre">reflesh_cookies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.reflesh_cookies" title="Permalink to this definition"></a></dt>
+<dd><p>Reflesh cookies.</p>
+<p>Not Impremented yet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.resubmit">
+<span class="sig-name descname"><span class="pre">resubmit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.resubmit" title="Permalink to this definition"></a></dt>
+<dd><p>Resubmit product.</p>
+<p>Not Inpremented yet</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.interface.YahooAuction.submit">
+<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#yahoo_auction.interface.YahooAuction.submit" title="Permalink to this definition"></a></dt>
+<dd><p>Submit product on Yahoo Auction page.</p>
+<p>Not Impremented yet.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-yahoo_auction.urls">
+<span id="yahoo-auction-urls-module"></span><h2>yahoo_auction.urls module<a class="headerlink" href="#module-yahoo_auction.urls" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">yahoo_auction.urls.</span></span><span class="sig-name descname"><span class="pre">YahooAuctionURL</span></span><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.AUCTION">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AUCTION</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.AUCTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.CANCEL">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CANCEL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.CANCEL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.CLOSED_WITHOUT_WINNER">
+<span class="sig-name descname"><span class="pre">CLOSED_WITHOUT_WINNER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://auctions.yahoo.co.jp/closeduser/jp/show/mystatus?select=closed&amp;hasWinner=0'</span></em><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.CLOSED_WITHOUT_WINNER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.CLOSED_WITH_WINNER">
+<span class="sig-name descname"><span class="pre">CLOSED_WITH_WINNER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://auctions.yahoo.co.jp/closeduser/jp/show/mystatus?select=closed&amp;hasWinner=1'</span></em><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.CLOSED_WITH_WINNER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.HOME">
+<span class="sig-name descname"><span class="pre">HOME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://yahoo.co.jp'</span></em><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.HOME" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.MYPAGE">
+<span class="sig-name descname"><span class="pre">MYPAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://auctions.yahoo.co.jp/user/jp/show/mystatus'</span></em><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.MYPAGE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="yahoo_auction.urls.YahooAuctionURL.SELLING">
+<span class="sig-name descname"><span class="pre">SELLING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://auctions.yahoo.co.jp/openuser/jp/show/mystatus?select=selling'</span></em><a class="headerlink" href="#yahoo_auction.urls.YahooAuctionURL.SELLING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-yahoo_auction">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-yahoo_auction" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Shuhei Nitta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

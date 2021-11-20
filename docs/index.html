@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Yahoo Auction Auto’s documentation! &mdash; Yahoo Auction Auto 0.0.4 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> Yahoo Auction Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Yahoo Auction Auto’s documentation!</a></li>
+<li><a class="reference internal" href="#id1">ヤフオク！のタスクを自動化</a><ul>
+<li><a class="reference internal" href="#id2">必要条件</a></li>
+<li><a class="reference internal" href="#id3">インストール</a></li>
+<li><a class="reference internal" href="#id4">使用例</a></li>
+<li><a class="reference internal" href="#licese">LICESE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Yahoo Auction Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to Yahoo Auction Auto’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-yahoo-auction-auto-s-documentation">
+<h1>Welcome to Yahoo Auction Auto’s documentation!<a class="headerlink" href="#welcome-to-yahoo-auction-auto-s-documentation" title="Permalink to this headline"></a></h1>
+</section>
+<section id="id1">
+<h1>ヤフオク！のタスクを自動化<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<section id="id2">
+<h2>必要条件<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Python3.9以上</p></li>
+<li><p>Google Chrome or Chromium</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>インストール<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ecoreuse</span><span class="o">/</span><span class="n">yahoo</span><span class="o">-</span><span class="n">auction</span><span class="o">-</span><span class="n">auto</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>使用例<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<p>このパッケージでは廃止された公式APIの代わりにcookieを使ってセッションを取得する。
+そのために、初めにcookieをファイルに書き出す。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoo_auction.cookie</span> <span class="kn">import</span> <span class="n">get_cookies</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">cookies</span> <span class="o">=</span> <span class="n">get_cookies</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cookies.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">cookies</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>書き出したcookieを使用して、出品情報を取得する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoo_auction</span> <span class="kn">import</span> <span class="n">YahooAuction</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cookies.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">cookies</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="n">ya</span> <span class="o">=</span> <span class="n">YahooAuction</span><span class="p">(</span><span class="n">cookies</span><span class="o">=</span><span class="n">cookies</span><span class="p">)</span>
+    <span class="n">aIDs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ya</span><span class="o">.</span><span class="n">get_urls_selling</span><span class="p">()</span> <span class="c1"># 出品中のaIDを全て取得する</span>
+    <span class="n">pprint</span><span class="p">(</span><span class="n">aIDs</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">aID</span> <span class="ow">in</span> <span class="n">aIDs</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="k">await</span> <span class="n">ya</span><span class="o">.</span><span class="n">get_info_selling</span><span class="p">(</span><span class="n">aID</span><span class="p">)</span> <span class="c1"># 出品中の情報を取得する。</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="licese">
+<h2>LICESE<a class="headerlink" href="#licese" title="Permalink to this headline"></a></h2>
+<p>MIT LICENSE</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Shuhei Nitta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
