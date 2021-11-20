@@ -1,4 +1,4 @@
-from yahoo_auction import YahooAuction
+from yahoo_auction_auto import YahooAuction
 import asyncio
 import json
 from pprint import pprint

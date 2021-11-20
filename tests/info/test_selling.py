@@ -3,7 +3,7 @@ from datetime import datetime
 
 import bs4
 
-from yahoo_auction.info import selling
+from yahoo_auction_auto.info import selling
 
 class TestInfoSelling(TestCase):
 
