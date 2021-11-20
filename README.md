@@ -2,20 +2,22 @@
 
 ## 必要条件
 
-- Python3.9以上
+- Python3.9 以上
 - Google Chrome or Chromium
 
 ## インストール
+
 ```
 pip install yahoo-auction-auto
 ```
 
 ## 使用例
-このパッケージでは廃止された公式APIの代わりにcookieを使ってセッションを取得する。
-そのために、初めにcookieをファイルに書き出す。
+
+このパッケージでは廃止された公式 API の代わりに cookie を使ってセッションを取得する。
+そのために、初めに cookie をファイルに書き出す。
 
 ```python
-from yahoo_auction.cookie import get_cookies
+from yahoo_auction_auto.cookie import get_cookies
 import json
 
 cookies = get_cookies()
@@ -24,10 +26,10 @@ with open('cookies.json', 'w') as f:
     json.dump(cookies, f)
 ```
 
-書き出したcookieを使用して、出品情報を取得する。
+書き出した cookie を使用して、出品情報を取得する。
 
 ```python
-from yahoo_auction import YahooAuction
+from yahoo_auction_auto import YahooAuction
 import asyncio
 import json
 from pprint import pprint
@@ -52,7 +54,6 @@ if __name__ == '__main__':
 
 ## API
 
-
-
 ## LICESE
+
 MIT LICENSE
