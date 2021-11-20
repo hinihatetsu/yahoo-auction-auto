@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Yahoo Auction Auto’s documentation! &mdash; Yahoo Auction Auto 0.0.4 documentation</title>
+  <title>Welcome to Yahoo Auction Auto’s documentation! &mdash; Yahoo Auction Auto 0.0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,8 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="yahoo_auction_auto" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,19 +36,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Yahoo Auction Auto’s documentation!</a></li>
-<li><a class="reference internal" href="#id1">ヤフオク！のタスクを自動化</a><ul>
-<li><a class="reference internal" href="#id2">必要条件</a></li>
-<li><a class="reference internal" href="#id3">インストール</a></li>
-<li><a class="reference internal" href="#id4">使用例</a></li>
-<li><a class="reference internal" href="#licese">LICESE</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">yahoo_auction_auto</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -80,21 +73,21 @@
 <section id="id2">
 <h2>必要条件<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Python3.9以上</p></li>
+<li><p>Python3.9 以上</p></li>
 <li><p>Google Chrome or Chromium</p></li>
 </ul>
 </section>
 <section id="id3">
 <h2>インストール<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ecoreuse</span><span class="o">/</span><span class="n">yahoo</span><span class="o">-</span><span class="n">auction</span><span class="o">-</span><span class="n">auto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">yahoo</span><span class="o">-</span><span class="n">auction</span><span class="o">-</span><span class="n">auto</span>
 </pre></div>
 </div>
 </section>
 <section id="id4">
 <h2>使用例<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
-<p>このパッケージでは廃止された公式APIの代わりにcookieを使ってセッションを取得する。
-そのために、初めにcookieをファイルに書き出す。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoo_auction.cookie</span> <span class="kn">import</span> <span class="n">get_cookies</span>
+<p>このパッケージでは廃止された公式 API の代わりに cookie を使ってセッションを取得する。
+そのために、初めに cookie をファイルに書き出す。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoo_auction_auto.cookie</span> <span class="kn">import</span> <span class="n">get_cookies</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">cookies</span> <span class="o">=</span> <span class="n">get_cookies</span><span class="p">()</span>
@@ -103,8 +96,8 @@
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">cookies</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>書き出したcookieを使用して、出品情報を取得する。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoo_auction</span> <span class="kn">import</span> <span class="n">YahooAuction</span>
+<p>書き出した cookie を使用して、出品情報を取得する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yahoo_auction_auto</span> <span class="kn">import</span> <span class="n">YahooAuction</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
@@ -128,10 +121,20 @@
 </pre></div>
 </div>
 </section>
+<section id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline"></a></h2>
+</section>
 <section id="licese">
 <h2>LICESE<a class="headerlink" href="#licese" title="Permalink to this headline"></a></h2>
 <p>MIT LICENSE</p>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">yahoo_auction_auto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="yahoo_auction_auto.html">yahoo_auction_auto package</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 </section>
@@ -147,7 +150,9 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-right" title="yahoo_auction_auto" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

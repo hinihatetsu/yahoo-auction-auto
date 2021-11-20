@@ -21,8 +21,8 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'Yahoo Auction Auto'
 copyright = '2021, Shuhei Nitta'
 author = 'Shuhei Nitta'
-import yahoo_auction
-release = yahoo_auction.__version__
+import yahoo_auction_auto
+release = yahoo_auction_auto.__version__
 
 # -- General configuration ---------------------------------------------------
 

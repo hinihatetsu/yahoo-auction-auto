@@ -1,7 +1,7 @@
-yahoo_auction
-=============
+yahoo_auction_auto
+==================
 
 .. toctree::
    :maxdepth: 4
 
-   yahoo_auction
+   yahoo_auction_auto
