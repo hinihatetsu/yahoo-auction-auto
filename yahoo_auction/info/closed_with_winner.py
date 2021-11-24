@@ -1,6 +1,0 @@
-
-
-
-class InfoClosedWithWinner:
-    
-    pass
