@@ -1,8 +1,10 @@
+from http.client import INSUFFICIENT_STORAGE
 import re
 from datetime import datetime
 from typing import Optional, Pattern
 
-import requests_async as requests
+import requests
+import requests_async
 import bs4
 
 from yahoo_auction_auto.urls import YahooAuctionURL
@@ -28,7 +30,7 @@ class InfoSelling:
     
     async def update(self, cookies: dict[str, str], timeout: int=60) -> None:
         url: str = YahooAuctionURL.AUCTION(self.aID)
-        response: requests.Response = await requests.get(url, cookies=cookies, timeout=timeout)
+        response: requests.Response = await requests_async.get(url, cookies=cookies, timeout=timeout)
         response.raise_for_status()
         soup: bs4.BeautifulSoup = bs4.BeautifulSoup(response.content, 'lxml')
 
@@ -105,9 +107,13 @@ def _get_stack(soup: bs4.BeautifulSoup) -> int:
         Stack count.
 
     """
-    tag: Optional[bs4.element.Tag] = soup.find('dt', text='個数'). \
-        find_next_sibling('dd', {'class': 'ProductDetail__description'})
-    return int(tag.text[1:]) if tag else 0
+    tags = soup.find_all('dt', text='個数')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'ProductDetail__description'})
+            return int(tag.text[1:]) if tag else 0
+    return 0
 
 
 def _from_yahoo_datetime(datetimestr: str) -> datetime:
@@ -144,9 +150,13 @@ def _get_start_datetime(soup: bs4.BeautifulSoup) -> datetime:
         Start datetime.
 
     """
-    tag: bs4.element.Tag = soup.find('dt', text='開始日時'). \
-        find_next_sibling('dd', {'class': 'ProductDetail__description'})
-    return _from_yahoo_datetime(tag.text[1:])
+    tags = soup.find_all('dt', text='開始日時')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'ProductDetail__description'})
+            return _from_yahoo_datetime(tag.text[1:])
+    return datetime(2000, 1, 1)
 
 
 def _get_end_datetime(soup: bs4.BeautifulSoup) -> datetime:
@@ -163,9 +173,13 @@ def _get_end_datetime(soup: bs4.BeautifulSoup) -> datetime:
         End datetime.
 
     """
-    tag: bs4.element.Tag = soup.find('dt', text='終了日時'). \
-        find_next_sibling('dd', {'class': 'ProductDetail__description'})
-    return _from_yahoo_datetime(tag.text[1:])
+    tags = soup.find_all('dt', text='終了日時')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'ProductDetail__description'})
+            return _from_yahoo_datetime(tag.text[1:])
+    return datetime(2000, 1, 1)
 
 
 def _get_refundable(soup: bs4.BeautifulSoup) -> bool:
@@ -182,9 +196,13 @@ def _get_refundable(soup: bs4.BeautifulSoup) -> bool:
         Return True if the product of `soup` is refundable.
 
     """
-    tag: bs4.element.Tag = soup.find('dt', text='返品'). \
-        find_next_sibling('dd', {'class': 'ProductDetail__description'})
-    return bool(tag.text[1:] != '返品不可')
+    tags = soup.find_all('dt', text='返品')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'ProductDetail__description'})
+            return bool(tag.text[1:] != '返品不可')
+    return False
 
 
 def _get_startprice(soup: bs4.BeautifulSoup) -> str:
@@ -200,9 +218,13 @@ def _get_startprice(soup: bs4.BeautifulSoup) -> str:
     str
         Start price. e.g. 10,000 円（税 0 円）
     """
-    tag: bs4.element.Tag = soup.find('dt', text='開始価格'). \
-        find_next_sibling('dd', {'class': 'ProductDetail__description'})
-    return str(tag.text[1:])
+    tags = soup.find_all('dt', text='開始価格')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'ProductDetail__description'})
+            return str(tag.text[1:])
+    return ''
 
 
 def _get_timeleft(soup: bs4.BeautifulSoup) -> str:
@@ -218,10 +240,13 @@ def _get_timeleft(soup: bs4.BeautifulSoup) -> str:
     str
         String of timeleft.
     """
-    tag: bs4.element.Tag = soup.find('dt', text='残り時間'). \
-        find_next_sibling('dd', {'class': 'Count__number'})
-    return str(tag.text.splitlines()[0])
-
+    tags = soup.find_all('dt', text='残り時間')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'Count__number'})
+            return str(tag.text.splitlines()[0])
+    return ''
 
 def _get_count_bid(soup: bs4.BeautifulSoup) -> int:
     """ Return bidding count from `soup`. 
@@ -236,9 +261,13 @@ def _get_count_bid(soup: bs4.BeautifulSoup) -> int:
     int
         Count of total bidding.
     """
-    tag: bs4.element.Tag = soup.find('dt', text='入札件数'). \
-        find_next_sibling('dd', {'class': 'Count__number'})
-    return int(tag.text[:-4])
+    tags = soup.find_all('dt', text='入札件数')
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('dd', {'class': 'Count__number'})
+            return int(tag.text[:-4])
+    return 0
 
 
 def _get_count_access(soup: bs4.BeautifulSoup) -> int:
@@ -254,9 +283,13 @@ def _get_count_access(soup: bs4.BeautifulSoup) -> int:
     int
         Count of access.
     """
-    tag: bs4.element.Tag = soup.find('span', {'class': 'StatisticsInfo__term--access'}). \
-        find_next_sibling('span', {'class': 'StatisticsInfo__data'})
-    return int(tag.text)
+    tags = soup.find_all('span', {'class': 'StatisticsInfo__term--access'})
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('span', {'class': 'StatisticsInfo__data'})
+            return int(tag.text)
+    return 0
 
 
 def _get_count_watch(soup: bs4.BeautifulSoup) -> int:
@@ -272,6 +305,10 @@ def _get_count_watch(soup: bs4.BeautifulSoup) -> int:
     int
         Count of watch.
     """
-    tag: bs4.element.Tag = soup.find('span', {'class': 'StatisticsInfo__term--watch'}). \
-        find_next_sibling('span', {'class': 'StatisticsInfo__data'})
-    return int(tag.text)
+    tags = soup.find_all('span', {'class': 'StatisticsInfo__term--watch'})
+    if len(tags) > 0:
+        tag = tags[0]
+        if isinstance(tag, bs4.element.Tag):
+            tag = tag.find_next_sibling('span', {'class': 'StatisticsInfo__data'})
+            return int(tag.text)
+    return 0
