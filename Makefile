@@ -4,9 +4,7 @@ docs: README.md docs_src
 	sphinx-build docs_src docs
 
 
-test: \
-	unittest \
-	mypy
+test: mypy unittest
 
 
 unittest:
@@ -14,4 +12,4 @@ unittest:
 
 
 mypy:
-	mypy yahoo_auction_auto
+	mypy yahoo_auction_auto tests
